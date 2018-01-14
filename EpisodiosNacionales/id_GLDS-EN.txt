@@ -1,0 +1,47 @@
+Orden	Serie	Episodio	Año	Título
+01	01	01	EN-01-01-01	1873	Trafalgar
+02	01	02	EN-02-01-02	1873	La Corte de Carlos IV
+03	01	03	EN-03-01-03	1873	El 19 de Marzo y el 2 de Mayo
+04	01	04	EN-04-01-04	1873	Bailén
+05	01	05	EN-05-01-05	1874	Napoleón en Chamartín
+06	01	06	EN-06-01-06	1874	Zaragoza
+07	01	07	EN-07-01-07	1874	Gerona
+08	01	08	EN-08-01-08	1874	Cádiz
+09	01	09	EN-09-01-09	1874	Juan Martín El Empecinado
+10	01	10	EN-10-01-10	1875	La Batalla de los Arapiles
+11	02	01	EN-11-02-01	1875	El Equipaje del Rey José
+12	02	02	EN-12-02-02	1875	Memorias de un cortesano de 1815
+13	02	03	EN-13-02-03	1876	La Segunda Casaca
+14	02	04	EN-14-02-04	1876	El Grande Oriente
+15	02	05	EN-15-02-05	1876	7 de Julio
+16	02	06	EN-16-02-06	1877	Los cien mil hijos de san Luis
+17	02	07	EN-17-02-07	1877	El terror de 1824
+18	02	08	EN-18-02-08	1878	Un voluntario realista
+19	02	09	EN-19-02-09	1878	Los Apostólicos
+20	02	10	EN-20-02-10	1878	Un faccioso más y algunos frailes menos
+21	03	01	EN-21-03-01	1898	Zumalacárregui
+22	03	02	EN-22-03-02	1898	Mendizábal
+23	03	03	EN-23-03-03	1898	De Oñate a La Granja
+24	03	04	EN-24-03-04	1899	Luchana
+25	03	05	EN-25-03-05	1899	La campaña del Maestrazgo
+26	03	06	EN-26-03-06	1899	La estafeta romántica
+27	03	07	EN-27-03-07	1899	Vergara
+28	03	08	EN-28-03-08	1900	Montes de Oca
+29	03	09	EN-29-03-09	1900	Los Ayacuchos
+30	03	10	EN-30-03-10	1900	Bodas reales
+31	04	01	EN-31-04-01	1902	Las tormentas del 48
+32	04	02	EN-32-04-02	1902	Narváez
+33	04	03	EN-33-04-03	1903	Los duendes de la camarilla
+34	04	04	EN-34-04-04	1904	La Revolución de Julio
+35	04	05	EN-35-04-05	1904	O'Donnell
+36	04	06	EN-36-04-06	1904	Aita Tettauen
+37	04	07	EN-37-04-07	1906	Carlos VI en La Rápita
+38	04	08	EN-38-04-08	1906	La vuelta al mundo en La Numancia
+39	04	09	EN-39-04-09	1906	Prim
+40	04	10	EN-40-04-10	1907	La de los tristes destinos
+41	05	01	EN-41-05-01	1908	España sin Rey
+42	05	02	EN-42-05-02	1908	España trágica
+43	05	03	EN-43-05-03	1910	Amadeo I
+44	05	04	EN-44-05-04	1911	La Primera República
+45	05	05	EN-45-05-05	1911	De Cartago a Sagunto
+46	05	06	EN-46-05-06	1912	Cánovas
