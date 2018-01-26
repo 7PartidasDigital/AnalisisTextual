@@ -6,4 +6,4 @@ En *MdT* están los materiales usados para analizar los diálogos del _Ministeri
 
 En *Scripts* están todos los pequeños scripts de R que se emplean para las diversas tareas colaterales del proyecto y de otras investigaciones sobre lectura a distancia, estilometría, análisis textual automatizado, etc.
 
-En *EpisodiosNacionales* habrá una versión en texto plano (UTF-8, UNIX) de los 46 Episodios Nacional de Benito Pérez Galdós.
+En *galdosenr* contiene el paquete de R con los textos de la primera serie de los Episodios Nacionales.
