@@ -1,0 +1,16 @@
+Package: galdosenr
+Type: Package
+Title: Episodios Nacionales (serie 1) de Benito Pérez Galdós
+Version: 0.1.0
+Author: José Manuel Fradejas Rueda
+Maintainer: José Manuel Fradejas Rueda <jose.fradejas.rueda@gmail.com>
+Description: Textos completos de los Episodios Nacionales, 1.ª serie, de
+    Benito Pérez Galdós, listo para ser utlizados en análisis de textos.
+    Los Episodios son recogidos son: "Trafalgar", "La corte de Carlos IV",
+    "El 19 de marzo y el 2 de mayo", "Bailén", "Napoleón en Chamartín",
+    "Zaragoza", "Gerona", "Cádiz", "Juan Martín el Empecinado" y
+    "La batalla de los Arapiles".
+License: CC0
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1
