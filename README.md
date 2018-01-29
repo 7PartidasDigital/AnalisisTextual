@@ -7,3 +7,5 @@ En *MdT* están los materiales usados para analizar los diálogos del _Ministeri
 En *Scripts* están todos los pequeños scripts de R que se emplean para las diversas tareas colaterales del proyecto y de otras investigaciones sobre lectura a distancia, estilometría, análisis textual automatizado, etc.
 
 En *galdosenr* contiene el paquete de R con los textos de la primera serie de los Episodios Nacionales.
+
+*bdae* es un directorio para ensayos de análisis textual con R.
