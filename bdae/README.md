@@ -4,7 +4,7 @@ Este repertorio tendrá varios ficheros de autores españoles fallecidos antes d
 
 Cada fichero lo conforma un número variable de líneas con una anchura máxima de 80 caracteres, por lo que se han destruido los párrafos, aunque son fácilmente reconstruibles ya que entre párrafo y párrafo hay una línea en blanco, sin ningún carácter. Están guardados en UTF-8 y Unix (LF). La primera línea del fichero informa del título y la  tercera del autor.
 
-Las claves para identificar autores y títulos con los ficheros se halla en la hoja Excel bdae_catalogo.xlsx.
+Las claves para identificar autores y títulos con los ficheros se halla en la hoja Excel [bdae_catalogo.xlsx](https://github.com/7PartidasDigital/AnalisisTextual/blob/master/bdae/bdae_catalogo.xlsx).
 
 ## Objetivo
 El objetivo de este proyecto es la preparación de materiales para la enseñanza de análisis textual automatizado en lengua española, por lo que los materiales son altamente inestables debido a su continua mejora y adaptación a las necesidades docentes.
