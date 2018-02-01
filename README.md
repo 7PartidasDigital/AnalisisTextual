@@ -10,5 +10,5 @@ En *galdosenr* contiene el paquete de R con los textos de la primera serie de lo
 
 *bdae* es un directorio para ensayos de análisis textual con R.
 
-´´vacias.txt´´ y ´´vacias.rda´´ son una lista de palabras funcionales (_stopwords_) para el español. Está construida sobre las listas de Snoball, SMART y Bouge a lo que se le han añadido formas que en estas lista de partida no se encontraba (algunas abreviaturas comunes –ud., vd., sr., sra., stra., d.– y algunas _antiguallas_ pero comunes en muchos libros anteriores a mediados del siglo XX (fé, fuí, fué, á, ó) y algúna errata excesivamente común como _tí_.
+`vacias.txt` y `vacias.rda` son una lista de palabras funcionales (_stopwords_) para el español. Está construida sobre las listas de Snoball, SMART,[Ranks](https://www.ranks.nl/stopwords/spanish) y [Bouge](https://sites.google.com/site/kevinbouge/stopwords-lists) a lo que se le han añadido formas que en estas lista de partida no se encontraban (algunas abreviaturas comunes –ud., vd., sr., sra., stra., d.– y algunas _antiguallas_ pero comunes en muchos libros anteriores a mediados del siglo XX (fé, fuí, fué, á, ó) y algúna errata excesivamente común como _tí_.
 
