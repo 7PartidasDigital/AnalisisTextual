@@ -10,5 +10,5 @@ En *galdosenr* contiene el paquete de R con los textos de la primera serie de lo
 
 *bdae* es un directorio para ensayos de análisis textual con R.
 
-`vacias.txt` y `vacias.rda` son la misma lista de palabras funcionales (_stopwords_) para el español y consta de 594 elementos (18.02.01). La primera es un fichero en texto plano UTF-8 y el segundo un fichero `.rda` para R. La lista está construida sobre las listas de Snowball, SMART, [Ranks](https://www.ranks.nl/stopwords/spanish) y [Bouge](https://sites.google.com/site/kevinbouge/stopwords-lists), a las que se les han añadido formas que en estas lista de partida no se encontraban (algunas abreviaturas comunes –ud., vd., sr., sra., stra., d.– y algunas _antiguallas_ pero comunes en muchos libros anteriores a mediados del siglo XX (fé, fuí, fué, á, ó) y algúna errata excesivamente común como _tí_.
+*data* contiene los ficheros .rda y .R que se desarrollen para el análisis textual.
 
