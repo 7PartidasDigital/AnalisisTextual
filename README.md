@@ -8,7 +8,5 @@ En *Scripts* están todos los pequeños scripts de R que se emplean para las div
 
 En *galdosenr* contiene el paquete de R con los textos de la primera serie de los Episodios Nacionales.
 
-*bdae* es un directorio para ensayos de análisis textual con R.
-
 *data* contiene los ficheros .rda y .R que se desarrollen para el análisis textual.
 
