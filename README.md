@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1195652.svg)](https://doi.org/10.5281/zenodo.1195652)
+
 # Análisis Textual
 En este repositorio se incluyen todos los materiales y scripts que se desarrollen referentes al **Análisis Textual** (minería de textos, estilometría, PLN, etc.) que sean colaterales al proyecto base.
 
