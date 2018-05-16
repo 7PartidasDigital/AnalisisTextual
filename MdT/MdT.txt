@@ -1,4 +1,4 @@
-temporada	episodio	titulo	personaje	frase
+temporada	episodio	titulo	personaje	texto
 1	1	El tiempo es el que es	CAPITÁN	"¡Atacasteis antes de tiempo! ¿Por qué lo hicisteis?"
 1	1	El tiempo es el que es	ALONSO	"Porque vos lo ordenasteis."
 1	1	El tiempo es el que es	CAPITÁN	"¿Tenéis testigos de lo que decís?"
