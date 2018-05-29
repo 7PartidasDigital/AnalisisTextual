@@ -16,12 +16,12 @@
 # Exige cargar previamente load("datos_esp.rda") que es un dataset que contiene
 # los diccionarios de sentimiento traducidos, modificados y adapatados al español para
 # el análisis de sentimientos (Sentiment Analisys) basado en el paquete TIDYTEXT.
-# Es un tibble 20011 x 4 con las columnas: palabra - sentimiento - lexicon - valor.
+# Es un tibble 15452 x 4 con las columnas: palabra - sentimiento - lexicon - valor.
 # Este dataset también incluye un listado de 765 palabras vacías (stopwords) del español
 # (vacias_esp).
 
 
-get_sentiments <- function(lexicon = c("nrc", "bing", "AFINN", "syuzhet")) {
+get_sentiments <- function(lexicon = c("nrc", "bing", "AFINN")) {
   data(sentimientos, package= NULL, envir = environment())
   lex <- match.arg(lexicon)
   
@@ -37,7 +37,7 @@ get_sentiments <- function(lexicon = c("nrc", "bing", "AFINN", "syuzhet")) {
   if (lex == "AFINN") {
     ret$sentimiento <- NULL
   } else {
-    ret$score <- NULL
+    ret$valor <- NULL
   }
   
   ret
