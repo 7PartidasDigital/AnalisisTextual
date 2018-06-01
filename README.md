@@ -9,5 +9,7 @@ En *Scripts* están todos los pequeños scripts de R que se emplean para las div
 
 En *galdosenr* contiene el paquete de R con los textos de la primera serie de los Episodios Nacionales.
 
-*data* contiene los ficheros .rda y .R que se desarrollen para el análisis textual.
+*vacias* contiene los ficheros planos de varios orígenes que recogen listas de palabras vacías (_stopwords_) y con el que se construye el dataset vacias_esp que se utiliza en los scripts necesarios.
+
+*lexicones* contendrá (futuro) los lexicones que se ha preparado para el análisis de sentimientos, tanto con el paquete _tidytext_ como con _syuzhet_.
 
