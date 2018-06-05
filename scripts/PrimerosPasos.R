@@ -43,6 +43,16 @@ vacias_esp <- read_csv("https://raw.githubusercontent.com/7PartidasDigital/Anali
 # una vez cargado, en la ventana Data aparecerá vacias_esp 765 obs. of 1 variable. Ya lo podemos usar
 
 # Pero el texto que acabamos de ver es poco práctico. Vamos a cargar un artículo de Mariano José Larra
-texto <- read_lines("https://raw.githubusercontent.com/7PartidasDigital/AnalisisTextual/master/textos/larra_caza.txt", skip = 5)
+texto_entrada <- read_lines("https://raw.githubusercontent.com/7PartidasDigital/AnalisisTextual/master/textos/larra_caza.txt", skip = 5)
 
 # Ya tienes el texto. Lo que has bajado no tiene el formato adecuado para trabajar dentro del ecosistema tidy. 
+texto_tidy <- data_frame(NumParr = 1:length(texto_entrada), texto = texto_entrada)
+# Ahora lo tienes convertido en una tabla (se llama tibble) de una columna en la que cada párrafo está en una fila
+# y además le hemos indicado que numere cada párrafo NumParr. Míralo…
+texto_tidy
+# Ahora lo podemos dividir en palabras con unnest_tokens que tiene dos argumentos, la columna en la que se va a guardar,
+# en este caso palabra y la columna de donde ha de sacar los datos texto.
+texto_tidy %>%
+  unnest_tokens(palabra, texto)
+
+
