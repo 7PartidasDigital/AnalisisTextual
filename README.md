@@ -7,9 +7,9 @@ En *MdT* están los materiales usados para analizar los diálogos del _Ministeri
 
 En *Scripts* están todos los pequeños scripts de R que se emplean para las diversas tareas colaterales del proyecto y de otras investigaciones sobre lectura a distancia, estilometría, análisis textual automatizado, etc.
 
-En *galdosenr* contiene el paquete de R con los textos de la primera serie de los Episodios Nacionales.
+En *textos* están todos los textos necesarios para la enseñanza y experimentación de _Análisis textual con R_.
 
 *vacias* contiene los ficheros planos de varios orígenes que recogen listas de palabras vacías (_stopwords_) y con el que se construye el dataset vacias_esp que se utiliza en los scripts necesarios.
 
-*lexicones* contendrá (futuro) los lexicones que se ha preparado para el análisis de sentimientos, tanto con el paquete _tidytext_ como con _syuzhet_.
+*lexicones* contendrá (futuro) los lexicones que se ha preparado para el análisis de sentimientos, tanto para realizarlo con el paquete _tidytext_ como con _syuzhet_.
 
