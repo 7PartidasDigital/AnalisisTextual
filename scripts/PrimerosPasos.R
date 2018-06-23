@@ -7,15 +7,15 @@ library(tidytext) # Librería específica para manejar textos.
 # Ya tienes las librerías que son necesarias para trabajar con el sistema tidy. Quizá te hagan falta,
 # más adelante, alguna más, pero por ahora basta.
 # Lo usual es seleccionar un directorio de trabajo. Para este curso te recomendamos que crees en el
-# escritorio de tu ordeandor una carpeta que llamarás AnaText, ahí irás guardando todo el material
+# escritorio de tu ordenador una carpeta que llamarás AnaText, ahí irás guardando todo el material
 # que necesites para el curso y que generes. Además, nos permitirá localizar las cosas con sencillez.
 # Hay varias maneras de establecer el directorio de trabajo. Dentro de RStudio haz clic en Session > 
 # Set Working Directory > Choose Directory. Se abrirá el Finder (Mac) / Explorador de Windows y ya solo
 # es cuestión de localizar en el escritorio la carpeta AnaText, seleccionarla y hacer clic en Open.
 # La otra manera es con el comando setwd()…
+
 setwd("~/Desktop/AnaText") # En Mac
-setwd("C:/Users/USUARIO/Desktop/AnaText") # En Win; USUARIO se debe cambiar por el nombre que se le
-# haya dado al ordenador.
+setwd("C:/Users/USUARIO/Desktop/AnaText") # En Win; USUARIO se debe cambiar por el nombre que se le haya dado al ordenador.
 
 # Ahora vas a cargar un texto. Puedes tenerlo en tu ordenador o puedes bajarlo de la red. Ahora lo
 # bajarás directamente a RStudio desde un sitio llamado GitHub, que es donde tenemos guardados todos
@@ -51,63 +51,93 @@ texto_entrada <- read_lines("https://raw.githubusercontent.com/7PartidasDigital/
 # decir algo así como: texto_entrada           chr [1:16] "Los tiempos en que la…
 # Eso quiere decir que en la memoria de trabajo de R hay un objeto de R llamado texto_entrada, que es una cadena de caracteres,
 # el chr, y que tiene 16, digamos, líneas de texto (en R lo llaman elementos, así que ya sabes que son los elementos en R), y
-# después imprime las primera palabras. ¿Cuántas? Depende de de tu pantalla. Puedes comprobarlo con
+# después imprime las primera palabras. ¿Cuántas? Depende de tu pantalla. Puedes comprobarlo con
 
 texto_entrada # Pulsa contro/cmd + intro
 
 # Aparecerá en la ventana de la consola, todo el texto del artículo de Larra. Si te mueves con el ratón hacia arriba, podrás
 # llegar al comienzo del texto. Verás que todos los elementos del objeto texto_entrada comienza con un número entre corchetes.
-# Ese es un "truco" para guardar la pista de las cosas que va generando y guardando. En este caso, cada elemento corresponde
-# a un párrafo del texto del artículo; o por decirlo de otra manera, toda la cadena de caracteres alfanuméricos que hay entre
-# dos intros.
+# En R todos los resultados aparecen con un número índice que te será muy útil. Ese es un "truco" para guardar la pista de las
+# cosas que va generando y guardando. En este caso, cada elemento corresponde a un párrafo del texto del artículo; o por decirlo
+# de otra manera, toda la cadena de caracteres alfanuméricos que hay entre dos intros.
 
-# objeto que has creado, texto-entrada, es uno de los más comunes en R se le llama normalmente vector. Piense en él como una
-# tabla de una sola columna y muchas filas. Además, solo puede contener un solo tipo de información: pueden ser letras,
-# números o lógico. Para saber qué longitud, qué tipo de vector es y otros atributos, R tiene una serie de funciones para
-# averiguarlo. Escribe en la consola
+# El objeto que has creado, texto-entrada, es uno de los más comunes en R se le llama normalmente vector. Piense en él como una
+# tabla de una sola columna y muchas filas. Además, solo puede contener un solo tipo de información: pueden ser letras, números
+# (de varios tipos: enteros, reales…) o lógico. Para saber qué longitud, qué tipo de vector es y otros atributos, R tiene una serie
+# de funciones para averiguarlo. Escribe en la consola
 
 letras <- letters
 numeros <- 1:26
 
-# En el primer caso  lo que has hecho ha sido rellenar el vector letras con las 26 letras de alfabeto. En el segundo, numeros
-# los has rellenado con los números 1 a 26 (en vez de escribirlos uno a uno, le has dicho, comienza en 1 y acaba en 26; podrías
-# haberlo dicho 100:200 (pruébalo):
+# En el primer caso lo que has hecho ha sido rellenar el vector letras con las 26 letras de alfabeto (las tiene R escondidas; si en vez
+# de letters pones LETTERS obtendrás las letras mayúsculas).
+# En el segundo, numeros, los has rellenado con los números 1 a 26 (en vez de escribirlos uno a uno, le has dicho, comienza en 1 y acaba en 26;
+# podrías haberlo dicho 100:200 (pruébalo):
 
-numeros <- 100:200
+numeros <- 100:999
 
-# Veamos a ahora como averiguar de que tipo es cada uno. Lo puedes ver en la pantalla Environment. Ahí te dice que letras es de
-# caracteres chr y que hay 26 elementos, del 1 al 26. Pero comprébalo con
+# Veamos a ahora como averiguar de que tipo es cada uno. Lo puedes ver en la pantalla Environment. Ahí te dice que letras es vector de
+# caracteres --chr-- y que cotiene 26 elementos, del 1 al 26. Pero comprébalo con
 
 str(letras)
+
+# Te informa de que es un vectro de caracteres --chr--, que los índices van del 1 al 26 y a continuación imprime el contenido: cada elemento
+# (en este caso una letra) que va entre comillas. No te olvides nunca: las cadenas de caracteres siempre aparecen entre comillas.
+
 summary(letras)
+
+# Este otro te informa de que tiene una longitud (length) de 26, que pertenece a la clase (class), caracteres (character) y al modo caracteres.
+
+class(letras)
+
+# Tan solo te informa de que es una vector de caracteres. El [1] no te dice que solo contiene un elemento, tan solo es una forma de indicar el
+# resultado.
 
 # Ahora inténtalo con el vector números
 
 str(numeros)
-summary(numeros) # Ojo no es lo mismo
 
-# Si ahora uno, concateno, letras y numeros
+# Te informa de que es un vector de números enteros --int--, que los índices van del 1 al 900 y a continuación imprime un poco del contenido. En esta
+# ocasión no hay comillas, son números (enteros, pero pueden ser reales, etc.).
+
+class(numeros)
+
+# Como en el caso de class(letras) tan solo te informa de que es una vector, en esta ocasión, de enteros --int--.
+
+summary(numeros)
+
+# Aquí el resultado no es lo mismo que en caso de vector de caracteres; ahora ha realizado algunas "cuentas" para facilitarte la vida, puesto que
+# con una sola función summary() te ofrece el resultado de cinco funciones:
+
+min(numeros)
+median(numeros)
+mean(numeros)
+max(numeros)
+quantile(numeros)
+
+# Has de tener muy claro que los números pueden ser números, con los que puedes hacer cuentas, pero también pueden ser caracteres, con los que
+# no puedes hacerlas. De modo si que unes dos vectores uno de caracteres y otro de números, el de número se convierte automáticament en caracteres.
+# Ahora vas a concatenar, unir, los vectores letras y numeros. El primer es de caracteres y el segundo de números enteros, y lo vas a guardar en
+# un nuevo vector llamado todo:
 
 todo <- c(letras,numeros)
 
-# R obligará a los números a que dejen de ser números y pasen a ser meros carateres. Ten en cuenta esto, no te empeñes en sumar
-# lo que crees que son números, cuando en realidad son caracteres. Para que lo vea más claro. Pusiste en numeros número enteros, del
-# 1 al 26 y de 100 al 200, y eso es lo que quiere decir el int que hay antes de los corchetes que te dicen cuántos elementos hay
-# en el vector. Ahora rellena números con
-
-numeros <- 2.5:9.5
-
-# Verás que el int ha cambiado a num. Si ahora unes letras y numeros, como has hecho antes:
-
-todo <- c(letras,numeros)
-
-# y miras la str de todo verás que dice chr. Un detalle, cuando los números van entre comillas entonces son meros caracteres.
+# Pídele a R que te digo de qué clase es el vector todo. Po si no te acuerdas…
 
 str(todo)
+class(todo)
+summary(todo)
 
-# y cuando son números, no importa de qué tipo (enteros, reales, etc.) entonces no están protegidos por las comillas:
+# La respuesta de R es clara: "character".
 
-numeros
+# Seguimos… pero vamos a limpiar un poco el entorno. Fíjate en Enviroment, tienes los vectores letras, numeros y todo y un poco
+# de información sobre su clase, longitud y contenido. Como no los vas a necesitar porque han sido para explicarte pequeñas cosas
+# vas a borrarlas. La función para borrar objetos del entorno (Enviromenent) es rm() y entre los paréntesis y separados por comas
+# se escriben los nombres de los objetos que se quieren borrar (¡cuidado que es irreversible!)
+
+rm(letras,numeros,todo)
+
+# Hecho. En Environment solo debe de estar texto_entrada. Sigamos…
 
 # Ya tienes el texto. Lo que has bajado no tiene el formato adecuado para trabajar dentro del ecosistema tidy. Este sistema
 # trabaja cómodamente, y con gran eficacia, cuando contempla los datos como una tabla en la que cada variable es una columna,
