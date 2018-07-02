@@ -19,7 +19,8 @@
 # Es un tibble 15452 x 4 con las columnas: palabra - sentimiento - lexicon - valor.
 # Este dataset también incluye un listado de 765 palabras vacías (stopwords) del español
 # (vacias_esp).
-
+# O en su defecto, cargar el fichero sentimientos.txt y convertirlo a una tibble.
+# Y, además, vacias_esp.txt que contiene la lista de stopwords para el español.
 
 get_sentiments <- function(lexicon = c("nrc", "bing", "AFINN", "syuzhet", "uva")) {
   data(sentimientos, package= NULL, envir = environment())
