@@ -11,8 +11,8 @@ En *textos* están todos los textos necesarios para la enseñanza y experimentac
 
 *vacias* contiene los ficheros planos de varios orígenes que recogen listas de palabras vacías (_stopwords_) y con el que se construye el `dataset vacias_esp` que se utiliza en los scripts necesarios.
 
-*lexicones* contiene los lexicones que se han preparado para el análisis de sentimientos, tanto para realizarlo con el paquete _tidytext_ como con _syuzhet_. La carpeta _tidytext_ contiene la tabla con todos los diccionarios en español. Se ha mantenido la estructura "palabra" "sentimiento" "lexicon" "valor" de la dataframe original del paquete _tidytext_. Se ha eliminado el lexicon `loughran` y se han incorporado dos nuevos: `syuzhet`, que es una traducción adaptada del `syuzhet_dict` de ML Jockers y otro designado `uva` que se basa en todos los demás pero con positivo y negativo.
+*lexicones* contiene los lexicones que se han preparado para el análisis de sentimientos, tanto para realizarlo con el paquete _tidytext_ como con _syuzhet_. La carpeta _tidytext_ contiene la tabla con todos los diccionarios en español. Se ha mantenido la estructura "palabra" "sentimiento" "lexicon" "valor" de la dataframe original del paquete _tidytext_. Se ha eliminado el lexicon `loughran` y se han incorporado dos nuevos: `syuzhet`, que es una traducción adaptada del `syuzhet_dict` de ML Jockers y otro designado `uva` que se basa en todos los demás pero con positivo y negativo. En esa misma carpeta se encuentra la función `get_sentiments` ligeramente reescrita para puentear la función `get_sentiments` del paquete original.
 
-En la carpeta _syuzhet_ se encuentran los diccionarios bing\_es, afinn\_es, syuzhet\_es y uva\_es para que puedan ser cargados como diccionarios `custom`en el paquete `syuzhet`.
+En la carpeta _syuzhet_ se encuentran los diccionarios bing\_es, afinn\_es, syuzhet\_es y uva\_es para que puedan ser cargados como diccionarios `custom` en el paquete `syuzhet`.
 
 Aviso: el lexicón *bing* está siendo objeto de una revisión.
