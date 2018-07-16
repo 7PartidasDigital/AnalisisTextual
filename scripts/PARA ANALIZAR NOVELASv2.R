@@ -51,3 +51,11 @@ novela_etiquetada <- tibble(texto = novela_etiquetada)
 etiquetada_tidy <- novela_etiquetada %>%
   unnest_tokens(oracion, texto, token = "sentences", to_lower = F)
 
+
+
+
+# Crea una tabla con las oraciones y cuenta las palabras en
+art_oraciones <- novela_etiquetada %>%
+  unnest_tokens(oracion, text, toke="sentences") %>%
+  mutate(num_pal = str_count(oracion. "\\w+"))
+
