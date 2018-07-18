@@ -15,7 +15,7 @@ re.etiqueta.lo <- function(x){ # Se podría convertir en una función para alige
   expandido <- gsub("^I", "INTER", expandido) # Interjección
   expandido <- gsub("^DA.*", "ART", expandido) # Artículos
   expandido <- gsub("^D.*", "DET", expandido) # Determinantes
-  expandido <- gsub("^Z", "NUM", expandido) # Números
+  expandido <- gsub("^Z.*", "NUM", expandido) # Números
   expandido <- as_tibble(expandido)
   expandido <- rename(expandido, etiqueta = value)
   final <- as_tibble(cbind(entrada,expandido))

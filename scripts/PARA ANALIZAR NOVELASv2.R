@@ -8,7 +8,9 @@ palabras_vacias <- read_tsv("~/Documents/GitHub/AnalisisTextual/vacias/vacias_es
 source("~/Documents/GitHub/AnalisisTextual/scripts/re.etiqueta.lo.R")
 
 # Lee texto
-entrada <- read_tsv("~/Desktop/Trabajo/ARTICULO.txt", col_names = F) %>%
+ficheros <- list.files(path = "~/Desktop/Sucio")
+
+entrada <- read_tsv(paste("~/Desktop/Sucio/", ficheros[3], sep=""), col_names = F) %>%
   rename(palabra = X1, PoS = X2) %>% # renombra las columnas
   add_row(palabra = NA, PoS = NA, .before = 1) %>% # Añade NA como primera fila
   mutate (frase = as.factor(cumsum(is.na(palabra)))) %>% # Cuenta y numera oraciones
@@ -19,21 +21,41 @@ re.analizado <- re.etiqueta.lo(entrada)
 
 
 # Reconstruye texto por etiquetas y lo divide por oraciones
-
 novela_etiquetada <- paste(re.analizado$etiqueta, collapse = " ")
-novela_etiquetada <- gsub(" ([,.:;?!])", "\\1", novela_etiquetada)
+novela_etiquetada <- gsub(" ([…,.:;?!])", "\\1", novela_etiquetada)
 novela_etiquetada <- gsub("\\*", "", novela_etiquetada) # Ojo a los cambio de escena
 novela_etiquetada <- gsub("([¿¡]) ", "\\1", novela_etiquetada)
+#novela_etiquetada <- gsub("…", "\\.\\.\\.", novela_etiquetada)
 novela_etiquetada <- gsub(" NA ", " ", novela_etiquetada)
 novela_etiquetada <- tibble(texto = novela_etiquetada)
-etiquetada_tidy <- novela_etiquetada %>%
-  unnest_tokens(oracion, texto, token = "sentences", to_lower = F)
-
-
-
-
-# Crea una tabla con las oraciones y cuenta las palabras en
-art_oraciones <- novela_etiquetada %>%
-  unnest_tokens(oracion, texto, token="sentences") %>%
+novela_etiquetada_tidy <- novela_etiquetada %>%
+  unnest_tokens(oracion, texto, token = "sentences", to_lower = F) %>%
   mutate(num_pal = str_count(oracion, "\\w+"))
 
+######
+# Algo falla aquí
+# Reconstruye el texto por palabras y lo divide por oraciones
+novela_texto <- paste(re.analizado$palabra, collapse = " ")
+novela_texto <- gsub(" ([…,.:;?!])", "\\1", novela_texto)
+novela_texto <- gsub("\\*", "", novela_texto) # Ojo a los cambio de escena
+novela_texto <- gsub("([¿¡]) ", "\\1", novela_texto)
+#novela_etiquetada <- gsub("…", "\\.\\.\\.", novela_etiquetada)
+novela_texto <- gsub(" NA ", " ", novela_texto)
+novela_texto <- tibble(texto = novela_texto)
+novela_texto_tidy <- novela_texto %>%
+  unnest_tokens(oracion, texto, token = "sentences") %>%
+  mutate(num_pal = str_count(oracion, "\\w+"))
+######
+
+# Quita pasos intermedios
+rm(novela_etiquetada, novela_texto)
+
+
+re.analizado %>%
+  count(etiqueta, sort = T) %>%
+  filter(n > 100) %>%
+  mutate(etiqueta = reorder(etiqueta, n)) %>%
+  ggplot(aes(etiqueta, n)) +
+  geom_col() +
+  xlab(NULL) +
+  coord_flip()
