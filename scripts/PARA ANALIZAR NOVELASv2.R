@@ -11,13 +11,27 @@ source("~/Documents/GitHub/AnalisisTextual/scripts/re.etiqueta.lo.R")
 ficheros <- list.files(path = "~/Desktop/Sucio")
 
 entrada <- read_tsv(paste("~/Desktop/Sucio/", ficheros[3], sep=""), col_names = F) %>%
-  rename(palabra = X1, PoS = X2) %>% # renombra las columnas
-  add_row(palabra = NA, PoS = NA, .before = 1) %>% # Añade NA como primera fila
+  rename(palabra = X1, lema = X2, PoS = X3) %>% # renombra las columnas
+  add_row(palabra = NA, lema = NA, PoS = NA, .before = 1) %>% # Añade NA como primera fila
   mutate (frase = as.factor(cumsum(is.na(palabra)))) %>% # Cuenta y numera oraciones
   drop_na() # Borra los NA
 
 # Invoca la función re.etiqueta.lo
 re.analizado <- re.etiqueta.lo(entrada)
+
+
+re.analizado <- within(re.analizado, etiqueta [etiqueta == "PUNT" & palabra == "."] <- ".")
+re.analizado <- within(re.analizado, etiqueta [etiqueta == "PUNT" & palabra == ","] <- ",")
+re.analizado <- within(re.analizado, etiqueta [etiqueta == "PUNT" & palabra == ":"] <- ":")
+re.analizado <- within(re.analizado, etiqueta [etiqueta == "PUNT" & palabra == ";"] <- ";")
+re.analizado <- within(re.analizado, etiqueta [etiqueta == "PUNT" & palabra == "("] <- "(")
+re.analizado <- within(re.analizado, etiqueta [etiqueta == "PUNT" & palabra == ")"] <- ")")
+re.analizado <- within(re.analizado, etiqueta [etiqueta == "PUNT" & palabra == "¿"] <- "¿")
+re.analizado <- within(re.analizado, etiqueta [etiqueta == "PUNT" & palabra == "?"] <- "?")
+re.analizado <- within(re.analizado, etiqueta [etiqueta == "PUNT" & palabra == "…"] <- "…")
+re.analizado <- within(re.analizado, etiqueta [etiqueta == "PUNT" & palabra == "¡"] <- "¡")
+re.analizado <- within(re.analizado, etiqueta [etiqueta == "PUNT" & palabra == "!"] <- "!")
+
 
 
 # Reconstruye texto por etiquetas y lo divide por oraciones

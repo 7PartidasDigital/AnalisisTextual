@@ -20,5 +20,5 @@ re.etiqueta.lo <- function(x){ # Se podría convertir en una función para alige
   expandido <- rename(expandido, etiqueta = value)
   final <- as_tibble(cbind(entrada,expandido))
   final <- final %>%
-    select(palabra,PoS,etiqueta,frase)
+    select(palabra,lema, PoS,etiqueta,frase)
 }
