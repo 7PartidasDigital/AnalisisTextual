@@ -20,6 +20,18 @@ entrada <- read_tsv(paste("~/Desktop/Sucio/", ficheros[3], sep=""), col_names = 
 re.analizado <- re.etiqueta.lo(entrada)
 
 
+# Extrae los adverbios en -mente
+adv_mente <- re.analizado %>%
+  filter(str_detect(re.analizado$palabra, "^\\w+mente$"))
+
+# Borra puntuación
+sin_puntuacion <- re.analizado %>%
+  filter(etiqueta != "PUNT")
+
+re.analizado %>%
+  filter(str_detect(re.analizado$palabra, "^\\w+mente$"), etiqueta != "ADV")
+
+
 re.analizado <- within(re.analizado, etiqueta [etiqueta == "PUNT" & palabra == "."] <- ".")
 re.analizado <- within(re.analizado, etiqueta [etiqueta == "PUNT" & palabra == ","] <- ",")
 re.analizado <- within(re.analizado, etiqueta [etiqueta == "PUNT" & palabra == ":"] <- ":")
@@ -31,7 +43,6 @@ re.analizado <- within(re.analizado, etiqueta [etiqueta == "PUNT" & palabra == "
 re.analizado <- within(re.analizado, etiqueta [etiqueta == "PUNT" & palabra == "…"] <- "…")
 re.analizado <- within(re.analizado, etiqueta [etiqueta == "PUNT" & palabra == "¡"] <- "¡")
 re.analizado <- within(re.analizado, etiqueta [etiqueta == "PUNT" & palabra == "!"] <- "!")
-
 
 
 # Reconstruye texto por etiquetas y lo divide por oraciones
