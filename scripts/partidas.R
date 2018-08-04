@@ -12,29 +12,29 @@ vacias_cast <- as_tibble(read_lines("~/Documents/Github/AnalisisTextual/vacias/v
   rename(palabra = value)
 
 # Carga el texto
-celestina <- read_delim("~/Documents/Github/AnalisisTextual/textos/celestina.txt", delim = "\t")
-celestina
+partidas <- read_delim("~/Documents/Github/AnalisisTextual/textos/SP_LOP_tabla.txt", delim = "\t")
+partidas
 
-celestina %>%
+partidas %>%
   count(personaje) %>%
   filter(personaje != "ARGUMENTO")
 
 
 
-celestina <- celestina %>% 
+partidas <- partidas %>% 
   filter(texto != "" & !is.na(texto)) %>%
   filter(personaje != "ARGUMENTO") %>%
   mutate(personaje2 = ifelse(
-    personaje %in% c("CALISTO", "celestina", "MELIBEA", "PARMENO", "SEMPRONIO"),
+    personaje %in% c("CALISTO", "partidas", "MELIBEA", "PARMENO", "SEMPRONIO"),
     personaje, "ZESTO"))
 
 # Divide el texto en palabras y borra las palabras vacías
-celestina_tidy <- celestina %>% 
+partidas_tidy <- partidas %>% 
   unnest_tokens(palabra, texto) %>% 
   anti_join(vacias_cast)
 
 # Cuenta las palabras que emplea cada personaje
-frecuencia <- celestina_tidy %>% 
+frecuencia <- partidas_tidy %>% 
   mutate(palabra = str_extract(palabra, "[[:alpha:]]+")) %>% 
   count(personaje2, palabra) %>% 
   group_by(personaje2) %>% 
@@ -90,7 +90,7 @@ frecuencia %>%
 # de Lorenzo Silva en Bevilacqua frente a las de Giménez Bartlett y su heroina Petra
 # Delicado.
 
-palabras_personaje <- celestina %>% 
+palabras_personaje <- partidas %>% 
   unnest_tokens(palabra, texto) %>% 
   count(personaje2, palabra) %>%
   mutate(palabra = str_extract(palabra, "[[:alpha:]]+")) %>% #Aquí borra los números
@@ -125,7 +125,7 @@ personaje_plot %>%
 # Palabras más características de cada episodio.
 
 
-palabras_acto <- celestina %>% 
+palabras_acto <- partidas %>% 
   unnest_tokens(palabra, texto) %>% 
   count(acto, palabra, sort = TRUE) %>% 
   ungroup()
@@ -152,10 +152,10 @@ as.data.frame(acto_top)
 
 # Análisis y relación de bigramas en el MdT
 
-bigramas_celestina <- celestina %>% 
+bigramas_partidas <- partidas %>% 
   unnest_tokens(bigrama, texto, token = "ngrams", n = 2)
 
-bigramas_separados <- bigramas_celestina %>% 
+bigramas_separados <- bigramas_partidas %>% 
   separate(bigrama, c("palabra1", "palabra2"), sep = " ")
 
 bigramas_filtrados <- bigramas_separados %>% 
