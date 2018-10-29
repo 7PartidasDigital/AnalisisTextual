@@ -1,5 +1,5 @@
 library(rvest)
-listado <- read.delim("DISCURSOS-INDICE.txt", header = T, sep = "\t", stringsAsFactors = F)
+listado <- read.delim("https://raw.githubusercontent.com/7PartidasDigital/AnalisisTextual/master/mensajes/DISCURSOS-INDICE.txt", header = T, sep = "\t", stringsAsFactors = F)
 for (i in 1:nrow(listado)){
   url <- listado$Direccion[i]
   discurso <- read_html(url)
