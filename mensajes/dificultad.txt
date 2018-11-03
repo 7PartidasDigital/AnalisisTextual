@@ -1,4 +1,4 @@
-Año	Index	Rating	Grade
+anno	index	rating	grade
 1975	51.8	D	10
 1976	57.06	VD	> 11
 1977	49.89	D	9
