@@ -12,7 +12,7 @@
 #                                         v. 1.0.0                                        #
 
 library(rvest)
-listado <- read.delim("https://raw.githubusercontent.com/7PartidasDigital/mensajes/master/MensajesIndice.txt", header = T, sep = "\t", stringsAsFactors = F)
+listado <- read.delim("https://raw.githubusercontent.com/7PartidasDigital/AnalisisTextual/master/mensajes/MensajesIndice.txt", header = T, sep = "\t", stringsAsFactors = F)
 for (i in 1:nrow(listado)){
   url <- listado$Directio[i]
   discurso <- read_html(url)

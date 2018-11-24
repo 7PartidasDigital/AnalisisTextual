@@ -1,5 +1,5 @@
 Anno	Rex	Duratio	Directio
-2017	Felipe VI	647	http://www.casareal.es/ES/Actividades/Paginas/actividades_discursos_detalle.aspx?data=13413
+2017	Felipe VI	647	http://www.casareal.es/ES/Actividades/Paginas/actividades_actividades_detalle.aspx?data=13413
 2016	Felipe VI	740	http://www.casareal.es/ES/Actividades/Paginas/actividades_discursos_detalle.aspx?data=5632
 2015	Felipe VI	731	http://www.casareal.es/ES/Actividades/Paginas/actividades_discursos_detalle.aspx?data=5555
 2014	Felipe VI	760	http://www.casareal.es/ES/Actividades/Paginas/actividades_discursos_detalle.aspx?data=5420
