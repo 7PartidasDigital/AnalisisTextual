@@ -55,6 +55,22 @@ mensajes_palabras %>%
 
 # Copn la literatura
 
+ficheros <- list.files(path ="~/Dropbox/_CORPUS_BASICO/-NADAL/txt", pattern = "\\d+")
+a <- gsub(".txt", "", ficheros, perl = T)
+a <- gsub("-", " ", a, perl = T)
+titulo <- gsub("^(.*?)_.*", "\\1", a, perl = T)
+autor <- gsub("^.*?_(.*?)_.*", "\\1", a, perl = T)
+anno <- as.integer(gsub(".*_(\\d+)_.*", "\\1", a, perl = T))
+premio <- gsub(".*?([[:upper:]]+)$", "\\1", a, perl = T)
+nadal <- data_frame(premio = character(), anno = integer(), autor = character(), titulo = character(), parrafo = integer(), texto = character())
+for (i in 1:length(ficheros)){
+  discurso <- readLines(paste("~/Dropbox/_CORPUS_BASICO/-NADAL/txt", ficheros[i], sep = "/"))
+  temporal <- data_frame(premio = premio[i], anno = anno[i],
+                         autor = autor[i], titulo = titulo[i],
+                         parrafo = seq_along(discurso), texto = discurso)
+  nadal <- bind_rows(nadal, temporal)
+}
+
 ficheros <- list.files(path ="~/Dropbox/_CORPUS_BASICO/-PLANETA/txt", pattern = "\\d+")
 a <- gsub(".txt", "", ficheros, perl = T)
 a <- gsub("-", " ", a, perl = T)
@@ -73,8 +89,26 @@ for (i in 1:length(ficheros)){
 
 premios <- bind_rows(nadal,planeta)
 
+# YA TENEMOS TODO
+vacias <- read_csv("https://raw.githubusercontent.com/7PartidasDigital/AnalisisTextual/master/vacias/vacias_esp.txt", col_names = TRUE)
+# Estop es replicando a ciegas: https://jwinternheimer.github.io/blog/churn-survey-text-analysis/
+
 premios_palabras <- premios %>%
   unnest_tokens(palabra, texto)
+
+premios_palabras <- premios_palabras %>%
+  anti_join(vacias)
+
+premios_palabras %>%
+  count(palabra, sort = T) %>%
+  filter(n > 200) %>%
+  mutate(palabra = reorder(palabra, n)) %>%
+  ggplot(aes(palabra, n)) +
+  geom_col() +
+  labs(x = "", y ="", title = "Palabras más comunes") +
+  coord_flip()
+
+
 
 # Este snippet calcula la frecuencia absoluta -count- y relativa -RelAnno-
 # por novela
@@ -93,8 +127,3 @@ premios_total <- premios_palabras %>%
 premios_total_vaciado <- premios_total %>%
   anti_join(vacias)
 
-a <- gsub(".txt", "", ficheros, perl = T)
-titulo <- gsub("^(.*?)_.*", "\\1", a, perl = T)
-autor <- gsub("^.*?_(.*?)_.*", "\\1", a, perl = T)
-anno <- gsub(".*_(\\d+)_.*", "\\1", a, perl = T)
-premio <- gsub(".*?([[:upper:]]+)$", "\\1", a, perl = T)
