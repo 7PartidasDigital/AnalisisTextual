@@ -1,6 +1,6 @@
-#################################### COSECHA MENSAJES #####################################
+###################################### COSECHEROS #####################################
 #                   Este fichero contiene el script mostrado en el post                   #
-#                                      COSECHEROS                                         #
+#                         https://7partidas.hypotheses.org/1773                          #
 #            dentro de la serie de entradas sobre Análisis Automático de Textos           #
 #  Proyecto 7PartidasDigital "Edición crítica digital de las Siete Partidas de Alfonso X" #
 #        Proyecto financiado por el MINECO, referencia FFI2016-75014-P AEI-FEDER, EU      #
