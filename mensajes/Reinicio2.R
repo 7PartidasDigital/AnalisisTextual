@@ -41,7 +41,12 @@ frecuencias_anno <- mensajes_palabras %>%
   mutate(relativa = n / sum(n)) %>%
   ungroup()
 
+vacias <- get_stopwords("es")
+vacias <- vacias %>%
+  rename(palabra = word)
 
+mensajes_vaciado <- mensajes_palabras %>%
+  anti_join(vacias)
 
 vacias <- read_csv("https://raw.githubusercontent.com/7PartidasDigital/AnalisisTextual/master/vacias/vacias_esp.txt", col_names = TRUE)
 
