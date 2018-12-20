@@ -28,9 +28,6 @@ for (i in 1:length(ficheros)){
   mensajes <- bind_rows(mensajes, temporal)
 }
 
-# Borra objetos que no sirven y que son temporales
-rm(temporal,discurso,i)
-
 # Regenera la tabla general con todas las palabras
 mensajes_palabras <- mensajes %>%
   unnest_tokens(palabra, texto)
@@ -40,4 +37,7 @@ mensajes_frecuencias <- mensajes_palabras %>%
   count(palabra, sort = T) %>%
   mutate(relativa = n / sum(n))
 
-# Continúa desde aquí…
+# Borra objetos que no sirven y que son temporales
+rm(temporal,discurso,i)
+
+# Continúa desde aquí…
