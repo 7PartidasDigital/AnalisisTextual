@@ -6,7 +6,6 @@
 "además"
 "adonde"
 "adónde"
-"adrede"
 "ahi"
 "ahí"
 "ahora"
