@@ -1,15 +1,17 @@
-########################   Reinicio para Mensajes de Navidad II   #########################
-#                   Este fichero contiene el script mostrado en el post                   #
-#                         https://7partidas.hypotheses.org/3516                           # 
-#            dentro de la serie de entradas sobre Análisis Automático de Textos           #
-#  Proyecto 7PartidasDigital "Edición crítica digital de las Siete Partidas de Alfonso X" #
-#        Proyecto financiado por el MINECO, referencia FFI2016-75014-P AEI-FEDER, EU      #
-#                Universidad de Valladolid -- IP José Manuel Fradejas Rueda               #
-#                              https://7partidas.hypotheses.org/                          #
-#                             https://github.com/7PartidasDigital                         #
-#                         Este material se distribuye con una licencia                    #
-#                                            MIT                                          #
-#                                         v. 1.0.0                                        #
+#######################   Reinicio para Mensajes de Navidad    ###########################
+#             Este fichero contiene el script para el reinicio del entorno               #
+#
+#          dentro del curso Análisis Automático de Textos y Estilomtería con R           #
+#          del Laboratorio de Innovación en Humanidades Digitales (LinhdUNED)            #           #
+#                                       edición 2019                                     #
+# Proyecto 7PartidasDigital "Edición crítica digital de las Siete Partidas de Alfonso X" #
+#       Proyecto financiado por el MINECO, referencia FFI2016-75014-P AEI-FEDER, EU      #
+#              Universidad de Valladolid -- IP José Manuel Fradejas Rueda                #
+#                            https://7partidas.hypotheses.org/                           #
+#                            https://github.com/7PartidasDigital                         #
+#                        Este material se distribuye con una licencia                    #
+#                                            MIT                                         #
+#                                         v. 1.0.0                                       #
 
 # Establece el directorio. No lo olvides.
 # Tiene que ser la carpeta mensajes.
