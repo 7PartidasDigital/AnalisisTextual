@@ -1,9 +1,9 @@
 #######################   Reinicio para Mensajes de Navidad    ###########################
 #             Este fichero contiene el script para el reinicio del entorno               #
-#
 #          dentro del curso Análisis Automático de Textos y Estilomtería con R           #
-#          del Laboratorio de Innovación en Humanidades Digitales (LinhdUNED)            #           #
+#          del Laboratorio de Innovación en Humanidades Digitales (LinhdUNED)            #
 #                                       edición 2019                                     #
+
 # Proyecto 7PartidasDigital "Edición crítica digital de las Siete Partidas de Alfonso X" #
 #       Proyecto financiado por el MINECO, referencia FFI2016-75014-P AEI-FEDER, EU      #
 #              Universidad de Valladolid -- IP José Manuel Fradejas Rueda                #
@@ -14,7 +14,7 @@
 #                                         v. 1.0.0                                       #
 
 # Establece el directorio. No lo olvides.
-# Tiene que ser la carpeta AnaText
+# Tiene que ser la carpeta mensajes.
 
 # Carga las librerías.
 library(tidyverse)
