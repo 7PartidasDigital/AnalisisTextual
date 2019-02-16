@@ -21,11 +21,11 @@ library(tidyverse)
 library(tidytext)
 
 # Ahora cargará todos los ficheros de los mensajes
-ficheros <- list.files(path ="corpus", pattern = "\\d+")
+ficheros <- list.files(path ="datos/mensajes", pattern = "\\d+")
 anno <- gsub("\\.txt", "", ficheros, perl = T)
 mensajes <- data_frame(anno = character(), parrafo = numeric(), texto = character())
 for (i in 1:length(ficheros)){
-  discurso <- readLines(paste("corpus", ficheros[i], sep = "/"))
+  discurso <- readLines(paste("datos/mensajes", ficheros[i], sep = "/"))
   temporal <- data_frame(anno = anno[i], parrafo = seq_along(discurso), texto = discurso)
   mensajes <- bind_rows(mensajes, temporal)
 }
