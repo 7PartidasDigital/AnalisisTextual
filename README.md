@@ -13,6 +13,8 @@ En *textos* están todos los textos necesarios para la enseñanza y experimentac
 
 *lexicones* contiene los lexicones que se han preparado para el análisis de sentimientos, tanto para realizarlo con el paquete _tidytext_ como con _syuzhet_. La carpeta _tidytext_ contiene la tabla con todos los diccionarios en español. Se ha mantenido la estructura "palabra" "sentimiento" "lexicon" "valor" de la dataframe original del paquete _tidytext_. Se ha eliminado el lexicon `loughran` y se han incorporado dos nuevos: `syuzhet`, que es una traducción adaptada del `syuzhet_dict` de ML Jockers y otro designado `uva` que se basa en todos los demás pero con positivo y negativo. En esa misma carpeta se encuentra la función `get_sentiments` ligeramente reescrita para puentear la función `get_sentiments` del paquete `tidytext` original.
 
+Se ha añadido un nuevo lexicón cuya base es el listado de los tokens de CREA. Se ha limpiado de cifras absurdas (códigos extraños) y algunas erratas debidas al OCR, pero persisten errores (eso incluye faltas de ortografía de los originales utilizados por la RAE, pero cuya frecuencia es mínima. Consiste en trews columnas separadas por tabuladores. La primera columna `palabra` contiene el _token_, la segunda columna, `total_n` es la frcuencia absoluta de dicha forma en el CREA y la tercera, `relativa` ofrce la frecuencia relativa. 
+
 En la carpeta _syuzhet_ se encuentran los diccionarios `bing_es`, `afinn_es`, `syuzhet_es` y `uva_es` para que puedan ser cargados como diccionarios `custom` en el paquete `syuzhet`.
 
 *Aviso*: el lexicón `bing` está siendo objeto de una revisión, por lo que es previsible que un futuro cercano (finales verano 2018) haya una nueva versión.
